@@ -1,0 +1,6 @@
+{
+  "name": "Image Layer Separator",
+  "description": "An interactive web application to upload images and separate them into discrete layers, starting with person and background isolation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
