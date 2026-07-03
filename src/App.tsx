@@ -551,13 +551,17 @@ export default function App() {
       <Header onReset={handleReset} hasImage={!!state.originalImage} processing={state.processing} />
 
       {/* Main Content Body */}
-      <div className="flex flex-1 overflow-hidden min-h-0 relative">
+      <div className="flex flex-col md:flex-row flex-1 overflow-hidden min-h-0 relative">
         {!state.originalImage ? (
           <UploadZone onImageSelected={handleImageSelected} processing={state.processing} />
         ) : (
           <>
             {/* Left Interactive Stage Panel */}
-            <div className={`flex-1 flex flex-col min-h-0 relative ${activeTab === 'stage' ? 'flex' : 'hidden md:flex'}`}>
+            <div className={`flex flex-col min-h-0 relative ${
+              activeTab === 'stage' 
+                ? 'flex-1 flex' 
+                : 'h-[42vh] sm:h-[45vh] md:h-auto md:flex-1 flex border-b border-[#E5E7EB] md:border-b-0'
+            }`}>
               {/* Dynamic Mode Switcher Bar right above Stage */}
               <div className="min-h-[2.5rem] py-1.5 bg-white/85 backdrop-blur-sm px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-[#E5E7EB] shrink-0 z-20 text-xs gap-2">
                 <div className="flex items-center gap-1.5 font-bold text-[#6B7280]">
